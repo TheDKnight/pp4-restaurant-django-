@@ -1,1 +1,1 @@
-web: gunicorn sun_of_a_bun.wsgi
+web: gunicorn sun_of_a_bun.wsgi.py
