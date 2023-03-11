@@ -15,8 +15,8 @@ TIME_SLOTS = (
 )
 
 GUESS_SELECT = (
-    ("1","1"),
-    ("2","2")
+    ("1", "1"),
+    ("2", "2")
 
 )
 
@@ -29,6 +29,24 @@ class ConfirmedBooking(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.CharField(max_length=200, unique=True)
 
+    class Meta:
+        verbose_name = "Confirmed Booking"
+        verbose_name_plural = "Confirmed Bookings"
 
 def __str__(self):
     return self.title, self.user
+
+
+class MenuItems(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+
+    class Meta:
+        verbose_name = "Menu Item"
+        verbose_name_plural = "Menu Items"
+    
+
+def __str__(self):
+    return self.name
+
