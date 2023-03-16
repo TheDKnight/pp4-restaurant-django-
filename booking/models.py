@@ -33,8 +33,9 @@ class ConfirmedBooking(models.Model):
         verbose_name = "Confirmed Booking"
         verbose_name_plural = "Confirmed Bookings"
 
-def __str__(self):
-    return self.title, self.user
+
+    def __str__(self):
+        return self.title, self.user
 
 
 class MenuItems(models.Model):
@@ -47,6 +48,6 @@ class MenuItems(models.Model):
         verbose_name_plural = "Menu Items"
     
 
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
 
