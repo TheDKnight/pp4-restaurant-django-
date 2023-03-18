@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
-from djmoney.models.fields import MoneyField
+
 
 # Create your models here.
 
@@ -26,8 +26,6 @@ class ConfirmedBooking(models.Model):
     day = models.DateField(default=datetime.now)
     time = models.CharField(max_length=10, choices=TIME_SLOTS, default="8pm")
     guests = models.CharField(max_length=20, choices=GUESS_SELECT, default="1")
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.CharField(max_length=200, unique=True)
 
     class Meta:
         verbose_name = "Confirmed Booking"

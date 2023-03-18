@@ -1,7 +1,15 @@
-{% extends "booking/base.html" %}
+{% extends 'booking/base.html' %}
 
 {% block content %}
 
-<h1>Contact</h1>
 
-{%endblock%}
+
+
+<h1>Contact Us</h1>
+<form onsubmit="return sendMail(this);">
+    <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+    <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+    <textarea rows="5" name="message" class="form-control" id="message" placeholder="Questions" required></textarea>
+    <button type="submit" class="btn btn-secondary center-block">Send Question</button>
+</form>
+{% endblock %}

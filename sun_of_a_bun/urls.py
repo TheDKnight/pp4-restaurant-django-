@@ -20,6 +20,7 @@ from booking import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('menu/', views.menu, name="menu"),
-    path('', views.home, name="home"),
+
+    path("", include("booking.urls")), 
+
 ]

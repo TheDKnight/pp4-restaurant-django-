@@ -34,6 +34,15 @@ DEBUG = True
 ALLOWED_HOSTS = ["pp4-restaurant-django.herokuapp.com", "localhost", "8000-thedknight-pp4restauran-8nwaig36ube.ws-eu89b.gitpod.io"]
 CSRF_TRUSTED_ORIGINS = ["https://8000-thedknight-pp4restauran-8nwaig36ube.ws-eu90.gitpod.io"]
 
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # new
+DEFAULT_FROM_EMAIL = "will@wsvincent.com"
+EMAIL_HOST = "smtp.sendgrid.net"  # new
+EMAIL_HOST_USER = "apikey"  # new
+EMAIL_HOST_PASSWORD = "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"  # new
+EMAIL_PORT = 587  # new
+EMAIL_USE_TLS = True  # new
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,9 +57,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    
     'cloudinary',
     'booking',    
     'djmoney',
+    
 ]
 
 SITE_ID = 1
@@ -156,3 +167,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+

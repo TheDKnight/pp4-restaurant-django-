@@ -18,7 +18,14 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init("iUR1a6La8JT7FvaCC");
+})();
+</script>
     <!-- Navigation -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -40,7 +47,7 @@
                         <a class="nav-link active" aria-current="page" href="">Bookings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Contact Us</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'contact' %}">Contact Us</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -64,4 +71,7 @@
     {% block content %}
     {% endblock %}
 </body>
+<footer> 
+    <script src="{% static 'js/sendEmail.js' %}"></script>
+</footer>
 </html>
