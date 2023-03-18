@@ -49,10 +49,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    
     'cloudinary',
     'booking',    
-    'djmoney',
     
 ]
 
