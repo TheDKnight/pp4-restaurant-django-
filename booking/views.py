@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import MenuItems, ConfirmedBooking
 from .forms import BookingForm
 
@@ -27,6 +27,13 @@ def booking_list(request):
         'bookings': bookings
     }
     return render(request, 'booking/booking.html', context)
+
+def booking_cancel(request, booking_id):
+    booking = get_object_or_404(ConfirmedBooking, id=booking_id, user=request.user)
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('booking')
+    return render(request, 'booking/booking_cancel.html', {'booking': booking})
 
 
 def home(request):

@@ -1,33 +1,15 @@
 {% extends "booking/base.html" %}
 
 {% block content %}
+  <h1>My Bookings</h1>
+  <ul>
+    {% for booking in bookings %}
+      <li>{{ booking.day }} at {{ booking.time }}, {{ booking.guests }} guests (<a href="{% url 'booking_cancel' booking.id %}">cancel</a>)</li>
+    {% empty %}
+      <li>You have no bookings.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'booking_new' %}">Make a new booking</a>
 
-<h1>Confirmed Bookings</h1>
- <a href="/booking/new" > <h3>New Booking</h3> </a>
- <a href="/booking/cancel" > <h3>Cancel Booking</h3></a>
-<table>
-    <thead>
-        <tr>
-            <th>User</th>
-            <th>Day</th>
-            <th>Time</th>
-            <th>Guests</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for booking in bookings %}
-        <tr>
-            <td>{{ booking.user }}</td>
-            <td>{{ booking.day }}</td>
-            <td>{{ booking.time }}</td>
-            <td>{{ booking.guests }}</td>
-        </tr>
-        {% empty %}
-        <tr>
-            <td colspan="4">No confirmed bookings.</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
 
 {%endblock%}
