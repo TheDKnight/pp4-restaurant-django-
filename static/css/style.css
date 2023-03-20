@@ -10,11 +10,11 @@
   }
   
   /* Style for the menu item name */
-  .menu-item-name {
+.menu-item-name {
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 10px;
-  }
+}
   
   /* Style for the menu item description */
   .menu-item-description {
@@ -28,3 +28,4 @@
     font-weight: bold;
     color: #cc0000;
   }
+

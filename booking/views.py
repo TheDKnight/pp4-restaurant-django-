@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import MenuItems, ConfirmedBooking
-from .forms import BookingForm
+from .forms import BookingForm, BookingFormEdit
 
 def menu(request):
     items = MenuItems.objects.all()
@@ -35,6 +35,18 @@ def booking_cancel(request, booking_id):
         return redirect('booking')
     return render(request, 'booking/booking_cancel.html', {'booking': booking})
 
+
+    
+def booking_edit(request, booking_id):
+    booking = get_object_or_404(ConfirmedBooking, id=booking_id)
+    if request.method == 'POST':
+        form = BookingFormEdit(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('booking')
+    else:
+        form = BookingFormEdit(instance=booking)
+    return render(request, 'booking/booking_edit.html', {'form': form})
 
 def home(request):
     return render(request, 'booking/home.html')

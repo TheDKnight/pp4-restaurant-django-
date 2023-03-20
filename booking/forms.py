@@ -8,3 +8,8 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = ConfirmedBooking
         fields = ('day', 'time', 'guests')
+
+class BookingFormEdit(forms.ModelForm):
+    class Meta:
+        model = ConfirmedBooking
+        fields = ('day', 'time', 'guests')
