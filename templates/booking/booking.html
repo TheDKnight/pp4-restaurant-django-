@@ -1,21 +1,29 @@
 {% extends "booking/base.html" %}
 {% block title %}Bookings {% endblock %}
 {% block content %}
-  <h1>My Bookings</h1>
 
-  {% if user.is_authenticated %}
-  <ul>
-    {% for booking in bookings %}
-      <li>{{ booking.day }} at {{ booking.time }}, {{ booking.guests }} guests  (<a href="{% url 'booking_edit' booking.id %}">Edit</a>) (<a href="{% url 'booking_cancel' booking.id %}">cancel</a>)</li>
-    {% empty %}
+<div class="row">
+  <div class="mx-auto col-10 col-md-8 col-lg-6">
+    <h1>My Bookings</h1>
+
+    {% if user.is_authenticated %}
+    <ul>
+      {% for booking in bookings %}
+      <li>{{ booking.day }} at {{ booking.time }}, {{ booking.guests }} guests (<a
+          href="{% url 'booking_edit' booking.id %}">Edit</a>) (<a
+          href="{% url 'booking_cancel' booking.id %}">cancel</a>)</li>
+      {% empty %}
       <li>You have no bookings.</li>
-    {% endfor %}
-  </ul>
-  <a href="{% url 'booking_new' %}">Make a new booking</a>
-  {% else %}
-  <p>Welcome to our restraurant. To make a booking, please log in or register. If
-    you
-    have not created an account yet, then <a class="link" href="{% url 'account_signup' %}">Register</a>
-    first.</p>
-  {% endif %}
+      {% endfor %}
+    </ul>
+    <a href="{% url 'booking_new' %}">Make a new booking</a>
+    {% else %}
+    <p>Welcome to our restraurant. To make a booking, please log in or register.
+      <a class="link" href="{% url 'account_login' %}">Login</a>
+      If you
+      have not created an account yet, then <a class="link" href="{% url 'account_signup' %}">Register</a>
+      first.</p>
+    {% endif %}
+  </div>
+</div>
 {%endblock%}

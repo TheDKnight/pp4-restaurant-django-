@@ -1,7 +1,8 @@
 {% extends "booking/base.html" %}
 {% block title %}Menu{% endblock %}
   {% block content %}
-
+  <div class="row">
+    <div class="mx-auto col-10 col-md-8 col-lg-6">
   <h1>All Day Menu</h1>
   {% for item in items %}
   <div class="menu-item-container">
@@ -12,5 +13,7 @@
   {% empty %}
     <p>There are no items in the menu yet.</p>
   {% endfor %}
+    </div>
+  </div>
 {% endblock %}
 
