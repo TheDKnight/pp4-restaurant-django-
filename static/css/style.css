@@ -130,7 +130,7 @@
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
+    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url("https://res.cloudinary.com/dgnwfyvpb/image/upload/v1679611934/static/img/bg-hero.cd7c3795d641.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
