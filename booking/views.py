@@ -25,7 +25,8 @@ def booking_new(request):
 
 
 def booking_list(request):
-    bookings = ConfirmedBooking.objects.all()
+    
+    bookings = ConfirmedBooking.objects.filter(user=request.user)
     context = {
         'bookings': bookings
     }
@@ -41,7 +42,7 @@ def booking_cancel(request, booking_id):
 
     
 def booking_edit(request, booking_id):
-    booking = get_object_or_404(ConfirmedBooking, id=booking_id)
+    booking = get_object_or_404(ConfirmedBooking, id=booking_id, user=request.user)
     if request.method == 'POST':
         form = BookingFormEdit(request.POST, instance=booking)
         if form.is_valid():
