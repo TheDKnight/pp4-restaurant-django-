@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,53 +14,54 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
-<script src="{% static 'js/sendEmail.js' %}"></script>
-</script>
-<script type="text/javascript">
-(function(){
-  emailjs.init("iUR1a6La8JT7FvaCC");
-})();
-</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+    <script src="{% static 'js/sendEmail.js' %}"></script>
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("iUR1a6La8JT7FvaCC");
+        })();
+    </script>
 
     <title>{% block title %}Son Of A Bun{% endblock %}</title>
 </head>
+
 <body class="d-flex flex-column min-vh-100">
- 
+
 
     <!-- Navigation -->
-        <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-                <a href="{% url 'home' %}" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Son Of A Bun</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                {% if user.is_authenticated %}
+    <!-- Navbar & Hero Start -->
+    <div class="container-xxl position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+            <a href="{% url 'home' %}" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Son Of A Bun</h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            </a>
+            {% if user.is_authenticated %}
 
-                <a href="{% url 'account_logout' %}" class="nav-item nav-link active">Logout</a>
-                {% else %}
+            <a href="{% url 'account_logout' %}" class="nav-item nav-link active">Logout</a>
+            {% else %}
 
-                <a href="{% url 'account_signup' %}" class="nav-item nav-link">Sign Up</a>
-                <a href="{% url 'account_login' %}" class="nav-item nav-link">Log In</a>
-                {% endif %}
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
-                        <a href="{% url 'menu' %}" class="nav-item nav-link">Menu</a>
-                        <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <a href="{% url 'booking' %}" class="btn btn-primary py-2 px-4">Book A Table</a>
+            <a href="{% url 'account_signup' %}" class="nav-item nav-link">Sign Up</a>
+            <a href="{% url 'account_login' %}" class="nav-item nav-link">Log In</a>
+            {% endif %}
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0 pe-4">
+                    <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
+                    <a href="{% url 'menu' %}" class="nav-item nav-link">Menu</a>
+                    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                 </div>
-            </nav>
+                <a href="{% url 'booking' %}" class="btn btn-primary py-2 px-4">Book A Table</a>
+            </div>
+        </nav>
 
 
-        </div>
-        <!-- Navbar & Hero End -->
+    </div>
+    <!-- Navbar & Hero End -->
 
     <div class="container">
         <div class="row">
@@ -73,23 +75,23 @@
             </div>
         </div>
     </div>
- 
+
     {% block content %}
     {% endblock %}
 
 </body>
 
 <footer class="mt-auto">
-    <p class="m-0 text-center text-blue" >Sun of a bun 2023</p>
-    <p class="m-0 text-center text-blue" >Follow us: 
-      <i class="fab fa-facebook-square ms-3"></i>
-      <i class="fab fa-twitter-square ms-3"></i>
-      <i class="fab fa-instagram-square ms-3"></i>
-      <i class="fab fa-youtube-square ms-3"></i>
+    <p class="m-0 text-center text-blue">Sun of a bun 2023</p>
+    <p class="m-0 text-center text-blue">Follow us:
+        <i class="fab fa-facebook-square ms-3"></i>
+        <i class="fab fa-twitter-square ms-3"></i>
+        <i class="fab fa-instagram-square ms-3"></i>
+        <i class="fab fa-youtube-square ms-3"></i>
     </p>
 
 
-  </footer>
+</footer>
 <script>
     setTimeout(function () {
         let messages = document.getElementById('msg');
@@ -97,4 +99,5 @@
         alert.close();
     }, 2500);
 </script>
+
 </html>
