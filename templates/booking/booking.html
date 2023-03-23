@@ -9,7 +9,7 @@
     {% if user.is_authenticated %}
     <ul>
       {% for booking in bookings %}
-      <li>{{ booking.day }} at {{ booking.time }}, {{ booking.guests }} guests (<a
+      <li>{{ booking.user }} at {{ booking.day }} at {{ booking.time }}, {{ booking.guests }} guests (<a
           href="{% url 'booking_edit' booking.id %}">Edit</a>) (<a
           href="{% url 'booking_cancel' booking.id %}">cancel</a>)</li>
       {% empty %}
