@@ -25,12 +25,14 @@ def booking_new(request):
 
 
 def booking_list(request):
-    
-    bookings = ConfirmedBooking.objects.filter(user=request.user)
-    context = {
+    if request.user.is_authenticated:
+        bookings = ConfirmedBooking.objects.filter(user=request.user)
+        context = {
         'bookings': bookings
-    }
-    return render(request, 'booking/booking.html', context)
+        }
+        return render(request, 'booking/booking.html', context)
+    else:
+        return render(request, 'booking/booking.html')
 
 def booking_cancel(request, booking_id):
     booking = get_object_or_404(ConfirmedBooking, id=booking_id, user=request.user)

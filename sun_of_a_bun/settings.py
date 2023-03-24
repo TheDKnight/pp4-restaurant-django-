@@ -30,7 +30,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["pp4-restaurant-django.herokuapp.com", "localhost", "8000-thedknight-pp4restauran-8nwaig36ube.ws-eu89b.gitpod.io", "8000-thedknight-pp4restauran-8nwaig36ube.ws-eu92.gitpod.io"]
 CSRF_TRUSTED_ORIGINS = ["https://8000-thedknight-pp4restauran-8nwaig36ube.ws-eu92.gitpod.io"]
