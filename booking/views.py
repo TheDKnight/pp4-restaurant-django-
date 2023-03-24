@@ -3,12 +3,13 @@ from .models import MenuItems, ConfirmedBooking
 from .forms import BookingForm, BookingFormEdit
 from django.contrib import messages
 
-
+# Displays all the items in the menu items.
 def menu(request):
     items = MenuItems.objects.all()
     return render(request, 'booking/menu.html', {'items': items})
    
 
+# Creates a new booking and redirects the user
 def booking_new(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
@@ -23,7 +24,7 @@ def booking_new(request):
 
     return render(request, 'booking/booking_new.html', {'form': form})
 
-
+# Shows the booking list if the user is logged in and the user has made a booking, else it shows the html asking user to log in
 def booking_list(request):
     if request.user.is_authenticated:
         bookings = ConfirmedBooking.objects.filter(user=request.user)
@@ -34,6 +35,7 @@ def booking_list(request):
     else:
         return render(request, 'booking/booking.html')
 
+# The booking cancel view that gets the booking id if the user is logged in and has a booking and can cancel said booking
 def booking_cancel(request, booking_id):
     booking = get_object_or_404(ConfirmedBooking, id=booking_id, user=request.user)
     if request.method == 'POST':
@@ -42,7 +44,7 @@ def booking_cancel(request, booking_id):
         return redirect('booking')
     return render(request, 'booking/booking_cancel.html', {'booking': booking})
 
-    
+# The booking edit view that gets the booking id if the user is logged in and has a booking and can edit said booking
 def booking_edit(request, booking_id):
     booking = get_object_or_404(ConfirmedBooking, id=booking_id, user=request.user)
     if request.method == 'POST':
@@ -56,10 +58,11 @@ def booking_edit(request, booking_id):
     return render(request, 'booking/booking_edit.html', {'form': form})
 
 
+# When url /home is called returns home.html
 def home(request):
     return render(request, 'booking/home.html')
 
-
+# When url /contact is called returns contact.html
 def contact(request):
     return render(request, 'booking/contact.html')
 

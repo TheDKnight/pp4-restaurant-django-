@@ -5,7 +5,6 @@ from datetime import datetime
 
 # Create your models here.
 
-
 TIME_SLOTS = (
     ("8 PM", "8 PM"),
     ("8:30 PM", "8:30 PM"),
@@ -43,8 +42,7 @@ class ConfirmedBooking(models.Model):
 
 
     def __str__(self):
-        return self.title, self.user
-
+        return f' USER: {self.user} DATE: {self.day} TIME: {self.time} GUESTS: {self.guests}'
 
 class MenuItems(models.Model):
     name = models.CharField(max_length=100)

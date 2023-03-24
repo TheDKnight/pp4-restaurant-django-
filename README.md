@@ -1,108 +1,122 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Sun Of Bun - Introduction.
 
-Welcome TheDKnight,
+<p align="center"><img src="./static/readme/img/main.png"
+        alt="Sun of a bun main home page"></p>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Project milestone 4 for Code Institute Full-stack development program.
+This project is a Full Stack website built using the Django framework.Sun Of A Bun is a restraurant based website where you can view the menu and register and acciount and book a table and send an email.You can also edit and delete the booking if needed.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[Live Project Here](https://pp4-restaurant-django.herokuapp.com/)
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+## User Experience - UX
 
-A blue button should appear to click: _Make Public_,
+### User Stories
 
-Another blue button should appear to click: _Open Browser_.
+* As a website user, I can:
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+1. Navigate around the site and easily view the desired content.
+2. View the menu on the site
+3. Register for an account to avail of the services offered to members.
+4. View the contact us form.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+* As logged in website user, I can:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+1. I can go to the booking page and see my list of bookings.
+2. I can create a new booking
+3. I can edit my booking
+4. I can cancel my booking
 
-To log into the Heroku toolbelt CLI:
+* As a website superuser, I can:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+1. Create new groups
+2. Create new users or edit existing users.
+3. Create new bookings or edit or change the existing bookings.
+4. Create new menu items or edit the current ones.
+5. Create some websites.
+6. Create social accounts
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+### Agile Methodology
 
-## Release History
+All functionality and development of this project were managed using GitHub which Projects can be found
+[here](https://github.com/users/TheDKnight/projects/4)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### The Scope
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+#### Main Site Goals
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+* To provide users with a good experience when using the restaurant website.
+* To provide users with a visually pleasing website that is intuitive to use and easy to navigate.
+* To provide a website with a clear purpose.
+* To provide role-based permissions that allows user to interact with the website.
+* To provide tools that allow users to create a booking and edit or cancel.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Features
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Home Page
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+<p align="center"><img src="./static/readme/img/main.png"
+        alt="Sun of a bun main home page"></p>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+This is the home page as you enter the webite.The header allows you to navigate the website or register or login.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Menu Page
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+<p align="center"><img src="./static/readme/img/menu.page.png"
+        alt="Sun of a bun  menu page"></p>
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+This is the menu page where the users can see what options are offered.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Contact Us Page
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+<p align="center"><img src="./static/readme/img/contactus.page.png"
+        alt="Sun of a bun contact us page"></p>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+This is the contact us page where the users can send an email with any query or question they may have.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Booking Page When Not Logged In
 
-------
+<p align="center"><img src="./static/readme/img/book.logout.png"
+        alt="Sun of a bun booking page when logged out"></p>
 
-## FAQ about the uptime script
+This is what the booking page looks when the user is not logged in, they need to register or log in to make or view there bookings.
 
-**Why have you added this script?**
+### Booking Page When Logged In
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+<p align="center"><img src="./static/readme/img/book.login.png"
+        alt="Sun of a bun booking page when logged in"></p>
 
-**How will this affect me?**
+When the user is logged in when viewing the booking page, they can edit or cancel there current bookings or make a new.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Admin Panel
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+<p align="center"><img src="./static/readme/img/admin.panel.png"
+        alt="Sun of a bun admin page when logged in"></p>
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+This is the view of the admin panel.
 
-**So….?**
+### Admin Panel Menu
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+<p align="center"><img src="./static/readme/img/admin.menu.png"
+        alt="Sun of a bun admin menu page when logged in"></p>
 
-**Can I opt out?**
+<p align="center"><img src="./static/readme/img/admin.menu.view.png"
+        alt="Sun of a bun admin menu view page when logged in"></p>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+This is the admin menu page where the admin can add new menu items or edit or delete the current ones.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Admin Panel Booking
 
-**Anything more?**
+<p align="center"><img src="./static/readme/img/admin.book.png"
+        alt="Sun of a bun admin booking page when logged in"></p>
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+<p align="center"><img src="./static/readme/img/admin.book.view.png"
+        alt="Sun of a bun admin booking view page when logged in"></p>
 
----
+This is the admin booking page when the admin can see current bookings and edit or cancel or add a new booking.
 
-Happy coding!
+## Testing
