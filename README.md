@@ -120,3 +120,55 @@ This is the admin menu page where the admin can add new menu items or edit or de
 This is the admin booking page when the admin can see current bookings and edit or cancel or add a new booking.
 
 ## Testing
+
+### Responsiveness
+
+### Ipad Air
+
+<p align="center"><img src="./static/readme/img/res.ipad.air.png"
+        alt="Ipad Air Website Home Page"></p>
+<p align="center"><img src="./static/readme/img/res.ipad.menu.png"
+        alt="Ipad Air Website Menu Page"></p>
+<p align="center"><img src="./static/readme/img/res.ipad.book.png"
+        alt="Ipad Air Website Booking Page"></p>
+
+### Iphone 12
+
+<p align="center"><img src="./static/readme/img/res.iphone12.png"
+        alt="iPhone 12 Website Home Page"></p>
+<p align="center"><img src="./static/readme/img/res.iphone12.menu.png"
+        alt="iPhone 12 Website Menu Page"></p>
+<p align="center"><img src="./static/readme/img/res.iphone12.book.png"
+        alt="iPhone 12 Website Booking Page"></p>
+
+## Browser Compatibility
+
+Tested the website in chrome and safari and the website work as expected in both browsers with no errors.
+
+## Bugs
+
+One bug i did have was in the models file where i was returning an item that didnt exist. 
+
+def __str__(self):
+        return self.title.
+
+def __str__(self):
+        return f' USER: {self.user} DATE: {self.day} TIME: {self.time} GUESTS: {self.guests}'
+
+I was returning self.title even tho there was no self.title and it was giving a 500 error.
+
+## Lighthouse Test/ Pagespeed
+
+### Desktop
+
+<p align="center"><img src="./static/readme/img/lh.desk.png"
+        alt="iPhone 12 Website Home Page"></p> 
+<p align="center"><img src="./static/readme/img/lh.desk.issues.png"
+        alt="iPhone 12 Website Home Page"></p>
+
+### Mobile
+
+<p align="center"><img src="./static/readme/img/lh.mobile.png"
+        alt="iPhone 12 Website Home Page"></p> 
+<p align="center"><img src="./static/readme/img/lh.mobile.issues.png"
+        alt="iPhone 12 Website Home Page"></p>
